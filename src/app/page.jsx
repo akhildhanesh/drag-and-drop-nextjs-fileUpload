@@ -26,8 +26,8 @@ export default function Home() {
   useEffect(() => {
     if (files.length > 0) {
       const formData = new FormData()
-      Array.from(files).forEach(file => {
-        formData.append('image', file)
+      Array.from(files).forEach((file,i) => {
+        formData.append(`file-${i}`, file)
       })
       const fileNames = Array.from(files).map(item => item.name)
       setFilesList(fileNames)
